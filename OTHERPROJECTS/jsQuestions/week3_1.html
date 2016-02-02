@@ -1,14 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <body>
 
 <script type="text/javascript">
+    
+    
+    
 
 var userAge = prompt("Please enter your age");
+    //there was only 1 equal sign... 
+    //the < needed to be added to make it less than 4. 
+    
 if (userAge <= 4){
 alert("So you're a baby!");
+    //the below lines were broken because it was missing a line | 
+    //without the second line, its not gunna know what the low and highest age is
+    //this was learned from code academy * bolleans * 
 } else if ( userAge < 10 || userAge > 100){
+    //alert needs to be inside the curly brackets
+    //the curly brackets were missing
+    //first i tried to take brackets away, but then i realised that the alert is the pop up which needs curly brackets on the outside
+    
 alert("I think you may be lying about your age");
 } else {
 alert("That's a good age");

@@ -1,5 +1,6 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">	
+
 <html>
 <body>
 <script language=JavaScript>
@@ -8,11 +9,14 @@ function writeTimesTable(timesTable, timesByStart, timesByEnd)
 {
    for (;timesByStart <= timesByEnd; timesByStart++)
    {
-      document.write(timesTable + " * " + timesByStart + " = " +
+      document.write(timesTable + " x " + timesByStart + " = " +
          timesByStart * timesTable + "<br>");
    }
 }
-    
+ //here is where it is changed 
+    //we want to continue the multiplication until we type in -1 
+    // once i got to this on code cademy i did not understand this question . or how to do it 
+
 var timesTable;
     
 while ( (timesTable = prompt("Enter the times table",-1)) != -1)
@@ -22,7 +26,8 @@ while ( (timesTable = prompt("Enter the times table",-1)) != -1)
     timesTable = prompt(timesTable + " is not a valid number, please retry",-1);
 
    }
-    
+        //i had to prompt her to stop at -1 
+    //i did this first by doing "var" and then found out i had to do "if" and "break", which makes sense now. 
    if (timesTable == -1)
    {
       break;
@@ -30,6 +35,7 @@ while ( (timesTable = prompt("Enter the times table",-1)) != -1)
     
    document.write("<br>The " + timesTable + " times table<br>");
    writeTimesTable(timesTable,1,12);
+    //this limits what numbers can be multiplied 
     
 }
 </script>
