@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head profile="http://www.w3.org/2005/10/profile">
+        <link rel="icon" type="image/png" href="images/red_lips_png_by_natyjonasproductions-d4ko9zq.png">
+        <meta charset="UTF-8">
+        <title>Lip Mania Shopping Cart</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+        <style>
+            .addpad {
+                padding-top: 15px;
+                padding-right: 20px;
+            }
+            
+            .jumbotron {
+                color: #A78E89;
+                background: #EFE2D9;
+            }
+            
+            body {
+                color: #413E4A;
+                background-image: url(images/congruent_outline.png);
+                font-family: "Ubuntu", sans-serif;
+                ;
+            }
+            
+            .container {
+                background: white;
+                height: 101%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <!-- this jumbotron is a bootstrap. It is the space on top where the title is places -->
+            <div class="jumbotron">
+                 <a href="../index.html" class="btn btn-default">Back to Web Design II</a>
+                <!-- NAV USED TO BE HERE -->
+                
+                <h1>CHECKOUT</h1>
+                <p>You have selected your fav lipsticks! Complete the following to proceed to checkout! </p>
+                </div>
+
+                <div class="row">
+                    <div class="bs-example col-md-4">
+                         <!-- added this bootstrap so it can show the items that were checked out.  -->
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <!-- wrapper for carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="images/be_silly.png" alt="Be Silly">
+                                </div>
+                                <div class="item">
+                                    <img src="images/chatterbox.png" alt="ChatterBox">
+                                </div>
+                                <div class="item">
+                                    <img src="images/modest.png" alt="Modest">
+                                </div>
+
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Choose Your Fav Finish!</h3>
+                        <label class="checkbox-inline">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="color" id="optionsRadios1" value="Tan and White" checked> Matte
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="color" id="optionsRadios2" value="Grey and White"> Semi-Glossy
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="color" id="optionsRadios3" value="Black and White"> Glossy
+                                </label>
+
+                                <select id="mySelect" class="form-control">
+                                    <option>Select Quantity</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                                <div id="mySelectMessage"></div>
+                            </div>
+                            <h4>Choose a perfect Lip Liner! </h4>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="extra" value="Add Trim"> Posh Lip Liner
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="extra" value="Add Clasp">Dark Night Lip Liner
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="extra" value="Add one day shipping">Pretty in Pink Lip Liner
+                                </label>
+                            </div>
+                    </div>
+                    <div class="col-md-4 addpad">
+                        <form class="form-inline">
+                            <div class="form-group">
+
+                                <label for="exampleInputName2">Name</label>
+                                <input type="text" class="form-control" id="mySingleLineText" placeholder="Enter Name...">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">Email&nbsp;</label>
+                                <input type="email" class="form-control" id="mySingleLineText2" placeholder="ilovelipstick@example.com">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4 addpad">
+                        <textarea id="myTextArea" class="form-control" rows="5" placeholder="Please write a Review of Lip Stick Here!"></textarea>
+                    </div>
+
+
+
+                    <div class="col-md-4 addpad">
+                        <button id="myButton" type="button" class="btn btn-primary btn-lg btn btn-default btn-block">Submit Review! </button>
+                    </div>
+                    <div class="col-md-12" id="log"></div>
+                </div>
+            </div>
+            <script src="js/takeAnOrder.js"></script>
+    </body>
+
+</html>
