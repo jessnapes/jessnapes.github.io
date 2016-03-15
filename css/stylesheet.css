@@ -1,3 +1,7 @@
-     .container {
+nav{
+    background color: black;
+}
+
+.container {
             display: none;
         }
