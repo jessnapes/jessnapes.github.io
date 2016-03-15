@@ -2,3 +2,7 @@ nav{
     
     background-color: grey;
 } 
+
+        .container {
+            display: none;
+        }
