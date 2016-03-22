@@ -1,0 +1,67 @@
+[{
+  "name": "Ouuuu Chocolate ",
+  "flavour": "Chocolate",
+  "scoops": "Three",
+  "image": "images/chocolate_icecream.jpg",
+  "commments": [{
+
+    "username": "swaggymcjaggy",
+    "stars": 5,
+    "comment": "What a great wear."
+  }, {
+    "username": "sunny25",
+    "stars": 3,
+    "comment": "Love the colour"
+
+  }, {
+    "username": "drunkiefunky",
+    "stars": 1,
+    "comment": "Hated this whole experience"
+  }]
+
+}, {
+  "name": "Plain Jane Vanilla",
+  "flavour": "Vanilla Bean",
+  "scoops": "Three",
+  "image": "images/vanilla_icecream.jpg",
+  "commments": [{
+
+    "username": "Crazy_cat_lady",
+    "stars": 2,
+    "comment": "Goodbye bad boys"
+  }, {
+    "username": "bigandbeautiful",
+    "stars": 4,
+    "comment": "Hello love lives"
+
+  }, {
+    "username": "hotandwasted",
+    "stars": 1,
+    "comment": "WOW"
+  }]
+
+
+}, {
+  "name": "Pepto Pink",
+  "flavour": "Strawberry",
+  "scoops": "Two",
+  "image": "images/strawberry_icecream.jpg",
+  "commments": [{
+
+    "username": "lowkeyfeelinu",
+    "stars": 4,
+    "comment": "swag casualy"
+  }, {
+    "username": "happyandiknowit",
+    "stars": 2,
+    "comment": "I love this hat. Bought it for my cat."
+
+  }, {
+    "username": "ByeWorld19",
+    "stars": 5,
+    "comment": "Wear this errryday"
+  }]
+
+
+
+}]
