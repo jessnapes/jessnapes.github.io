@@ -1,65 +1,65 @@
 [{
-  "name": "Ouuuu Chocolate ",
-  "flavour": "Chocolate",
-  "scoops": "Three",
-  "image": "images/chocolate_icecream.jpg",
-  "commments": [{
+    "name": "Ouuuu Chocolate ",
+    "flavour": "Chocolate",
+    "scoops": "3 scoops for $5.98",
+    "image": "images/chocolate_icecream.jpg",
+    "comments": [{
 
-    "username": "swaggymcjaggy",
-    "stars": 5,
-    "comment": "What a great wear."
+        "username": "swaggymcjaggy",
+        "stars": 5,
+        "comment": "What a great fucking ice cream like omg"
   }, {
-    "username": "sunny25",
-    "stars": 3,
-    "comment": "Love the colour"
+        "username": "sunny25",
+        "stars": 5,
+        "comment": "Love the flavour"
 
   }, {
-    "username": "drunkiefunky",
-    "stars": 1,
-    "comment": "Hated this whole experience"
+        "username": "drunkiefunky",
+        "stars": 1,
+        "comment": "Hate chocolate"
   }]
 
 }, {
-  "name": "Plain Jane Vanilla",
-  "flavour": "Vanilla Bean",
-  "scoops": "Three",
-  "image": "images/vanilla_icecream.jpg",
-  "commments": [{
+    "name": "Plain Jane Vanilla",
+    "flavour": "Vanilla Bean",
+    "scoops": "3 scoops for $5.98",
+    "image": "images/vanilla_icecream.jpg",
+    "comments": [{
 
-    "username": "Crazy_cat_lady",
-    "stars": 2,
-    "comment": "Goodbye bad boys"
+        "username": "Ice-Cream-Lover",
+        "stars": 2,
+        "comment": "This ice cream is too plain! But Traditoinal, if thats what youre into ! "
   }, {
-    "username": "bigandbeautiful",
-    "stars": 4,
-    "comment": "Hello love lives"
+        "username": "bigandbeautiful",
+        "stars": 5,
+        "comment": "BEST VANILLA ICE CREAM EVER"
 
   }, {
-    "username": "hotandwasted",
-    "stars": 1,
-    "comment": "WOW"
+        "username": "hotandwasted",
+        "stars": 4,
+        "comment": "Exactly what i expected!! "
   }]
 
 
 }, {
-  "name": "Pepto Pink",
-  "flavour": "Strawberry",
-  "scoops": "Two",
-  "image": "images/strawberry_icecream.jpg",
-  "commments": [{
+    "name": "Pepto Pink",
+    "flavour": "Strawberry",
+    "scoops": "3 scoops for $5.98",
+    "image": "images/strawberry_icecream.jpg",
+    "comments": [{
 
-    "username": "lowkeyfeelinu",
-    "stars": 4,
-    "comment": "swag casualy"
+        "username": "lowkeyfeelinu",
+        "stars": 4,
+        "comment": "dope flavour yo, but lykkkeeeeeeeeee im over it "
   }, {
-    "username": "happyandiknowit",
-    "stars": 2,
-    "comment": "I love this hat. Bought it for my cat."
+        "username": "happyandiknowit",
+        "stars": 4,
+        "comment": "i love strawberries so i love this ice cream flavour. its different "
 
   }, {
-    "username": "ByeWorld19",
-    "stars": 5,
-    "comment": "Wear this errryday"
+        "username": "ByeWorld19",
+        "stars": 5,
+        "comment": "Better than i expected"
   }]
 
 

@@ -12,15 +12,30 @@ $(document).ready(function () {
                             '<div class = "name" >' + item.name + '</div>' +
                             '<div class = "flavour" >' + item.flavour + '</div>' +
                             '<div class = "scoops" >' + item.scoops + '</div>' +
-                            '<img src="' + item.image + '"/>' +
+                            '<img class="icecreamimage" src="' + item.image + '"/>' +
                             '<div class="commentsContainer">';
-console.dir(item.comments);
+                        console.dir(item.comments);
 
-                        $.each(item.comments, function(ind, i) {
+                        $.each(item.comments, function (ind, i) {
                                 html += '<div class ="buyerName">' + i.username + '</div>' +
-                                    '<div class ="buyerComment">' + i.comment + '</div>';
+                                    '<div class ="buyerComment">' + i.comment + '</div>' +
+                                    '<div class="renderStars">';
 
-                            }) //each comment
+                                var numStars = Number(i.stars);
+
+                                for (var i = 1; i <= 5; i++) {
+                                    if (i <= numStars) {
+                                        html += '<img src="images/fullstar.png"/>';
+
+                                    } else {
+
+                                        html += '<img src="images/emptystar.png"/>';
+                                    }
+
+                                } //var loop
+
+                                html += '</div>'; //end stars
+                            }) //each comment 
 
                         html += '</div>' + // comments container
                             '</div>'; //col-md-4
