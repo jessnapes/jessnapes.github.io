@@ -13,31 +13,34 @@ $(document).ready(function () {
                             '<div class = "flavour" >' + item.flavour + '</div>' +
                             '<div class = "scoops" >' + item.scoops + '</div>' +
                             '<img class="icecreamimage" src="' + item.image + '"/>' +
-                            '<div class="commentsContainer">';
-                        console.dir(item.comments);
+                            // '<div class="commentsContainer">';
 
+                            '<div class="panel panel-default">' + //added
+                            '<div class="panel-heading">Ice Cream Reviews! </div>'; //added
                         $.each(item.comments, function (ind, i) {
-                                html += '<div class ="buyerName">' + i.username + '</div>' +
+                                html += '<div class="panel-body">' + //added
+                                    '<div class ="buyerName">' + i.username + '</div>' +
                                     '<div class ="buyerComment">' + i.comment + '</div>' +
                                     '<div class="renderStars">';
 
-                                var numStars = Number(i.stars);
+                                for (var j = 1; j <= 5; j++) {
 
-                                for (var i = 1; i <= 5; i++) {
-                                    if (i <= numStars) {
+                                    if (j <= i.stars) {
                                         html += '<img src="images/fullstar.png"/>';
-
                                     } else {
-
                                         html += '<img src="images/emptystar.png"/>';
                                     }
 
                                 } //var loop
 
-                                html += '</div>'; //end stars
+                                html +=
+                                    '</div>' + //end stars
+                                    '</div>'; //panel body
+
                             }) //each comment 
 
                         html += '</div>' + // comments container
+                            '</div>' + //panel
                             '</div>'; //col-md-4
 
                     }) //EACH
