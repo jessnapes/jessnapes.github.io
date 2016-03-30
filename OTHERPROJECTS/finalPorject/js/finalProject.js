@@ -22,25 +22,28 @@ $(document).ready(function () {
                 })
             } else if (partial == "seeCatsPage") { //ajax models.html
                 //paste the getJSON here; change the append id; change the file name
+
                 $.getJSON("jsonDatabase/finalJson.json", function (data) {
 
                         console.dir(data);
                         var html = "";
 
+
                         $.each(data, function (index, item) {
                                 html += '<div class="col-md-4">' +
-                                    '<div class="catName">' + item.name + '</div>' +
-                                    '<div class="catType"><small>type </small>' + item.type + '</div>' +
-                                    '<div class="catGender"><small>gender </small>' + item.gender + '</div>' +
-                                    '<img class="catImage" src="' + item.image + '"/>' +
-                                    //deleted commentsContainer
+                                    '<div class = "name" >' + item.name + '</div>' +
+                                    '<div class = "flavour" >' + item.flavour + '</div>' +
+                                    '<div class = "scoops" >' + item.scoops + '</div>' +
+                                    '<img class="icecreamimage" src="' + item.image + '"/>' +
+                                    // '<div class="commentsContainer">';
+
                                     '<div class="panel panel-default">' + //added
-                                    '<div class="panel-heading">Renter Comments</div>'; //added
+                                    '<div class="panel-heading">Ice Cream Reviews! </div>'; //added
                                 $.each(item.comments, function (ind, i) {
                                         html += '<div class="panel-body">' + //added
-                                            '<div class="renterName">' + i.username + '</div>' +
-                                            '<div class="renterComment">' + i.comment + '</div>' +
-                                            '<div class="renterStars">';
+                                            '<div class ="buyerName">' + i.username + '</div>' +
+                                            '<div class ="buyerComment">' + i.comment + '</div>' +
+                                            '<div class="renderStars">';
 
                                         for (var j = 1; j <= 5; j++) {
 
@@ -49,14 +52,20 @@ $(document).ready(function () {
                                             } else {
                                                 html += '<img src="images/emptystar.png"/>';
                                             }
-                                        }
-                                        html += '</div>' + //end stars
-                                            '</div>'; //panel body
-                                    }) //each comment
 
-                                html += '</div>' + //panel
+                                        } //var loop
+
+                                        html +=
+                                            '</div>' + //end stars
+                                            '</div>'; //panel body
+
+                                    }) //each comment 
+
+                                html += '</div>' + // comments container
+                                    '</div>' + //panel
                                     '</div>'; //col-md-4
-                            }) //each cat
+
+                            }) //EACH
 
                         $("#pageContent").html(html);
                     }) //getJSON
