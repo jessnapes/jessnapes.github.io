@@ -59,7 +59,7 @@ $(document).ready(function () {
                                             '</div>' + //end stars
                                             '</div>'; //panel body
 
-                                    }) //each comment 
+                                    }) //each comment
 
                                 html += '</div>' + // comments container
                                     '</div>' + //panel
@@ -70,8 +70,13 @@ $(document).ready(function () {
                         $("#pageContent").html(html);
                     }) //getJSON
             } else if (partial == "orderPage") { //ajax get order.html
-                $.get("partials/order.html", function (data) {
+                $.get("partials/order2.html", function (data) {
                         $("#pageContent").html(data);
+
+
+                    //activating the start rent date and end rent data
+                            $('#startRentDate, #endRentDate').datepicker({});
+
                         //put the takeAnOrder.js here (inside get)
                         //change button text
                         $("#myButton").on("mouseenter", function () {
