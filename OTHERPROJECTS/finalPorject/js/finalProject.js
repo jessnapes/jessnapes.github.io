@@ -18,7 +18,7 @@ $(document).ready(function () {
             if (partial == "homePage") { //ajax get home.html
                 $.get("partials/home.html", function (data) {
                     $("#pageContent").html(data);
-                    $('.carousel').carousel();
+                    $('.carousel').carousel()
                 })
             } else if (partial == "seeCatsPage") { //ajax models.html
                 //paste the getJSON here; change the append id; change the file name
@@ -38,7 +38,7 @@ $(document).ready(function () {
                                     // '<div class="commentsContainer">';
 
                                     '<div class="panel panel-default">' + //added
-                                    '<div class="panel-heading">Ice Cream Reviews! </div>'; //added
+                                    '<div class="panel-heading"> Ice Cream Reviews! </div>'; //added
                                 $.each(item.comments, function (ind, i) {
                                         html += '<div class="panel-body">' + //added
                                             '<div class ="buyerName">' + i.username + '</div>' +
@@ -74,8 +74,8 @@ $(document).ready(function () {
                         $("#pageContent").html(data);
 
 
-                    //activating the start rent date and end rent data
-                            $('#startRentDate, #endRentDate').datepicker({});
+                        //activating the start rent date and end rent data
+                        $("startRentDate, #endRentDate").datepicker({});
 
                         //put the takeAnOrder.js here (inside get)
                         //change button text
@@ -137,7 +137,30 @@ $(document).ready(function () {
             $("#pageContent").fadeIn();
         }
 
+        function sendConfirmation() {
+            //make an object to record data for database;
+            var order = {};
+            //get all teh jquery objects
+            var formData = $("input, select");
+            //for each jquery object
+            formData.each(function () {
+                var id = $(this).attr("id"); //get the id of the element
+                order[id] = $(this).val(); //set the field and the value
+            })
+
+            alert("Sending to database " + JSON.stringify(order));
+            $("#successMsg").html("Order Received!<br/><br/>" +
+                order.catSelect + " will be delivered on " +
+                order.startRentDate +
+                "<img id='chocolate' src='images/chocolate_icecream.jpg'>");
+
+        } //sendConfirmation
+
         //begin the program, get the homepage
         getPartial("homePage");
 
+
+
+
+        ;
     }) //ready

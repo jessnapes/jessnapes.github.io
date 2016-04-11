@@ -41,25 +41,7 @@
     border: black solid 10px;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-}
 
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
-
-.footer {
-    background-color: white;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: inherit;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-}
 
 .rowMargins {
     /*margins are to offset the container*/
