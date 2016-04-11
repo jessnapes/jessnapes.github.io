@@ -2,28 +2,29 @@ $(document).ready(function () {
 
         //get all the nav li, add click event
         $(".nav").find("li").on("click", function () {
-
+                $("#pageContent").hide().html("");
                 //remove all active class
                 $(".nav").find("li").removeClass("active");
                 //add active class to clicked li
                 $(this).addClass("active");
 
+                //get the correct page according to click
                 var page = $(this).attr("id");
                 getPartial(page);
 
             }) //click
 
+        //get the parital via JSON, add to page, activiate associating js
         function getPartial(partial) {
-            $("#pageContent").hide();
+
             if (partial == "homePage") { //ajax get home.html
                 $.get("partials/home.html", function (data) {
                     $("#pageContent").html(data);
-                    $('.carousel').carousel()
+                    $('.carousel').carousel();
                 })
-            } else if (partial == "seeCatsPage") { //ajax models.html
+            } else if (partial == "seeIceCreamPage") { //ajax models.html
                 //paste the getJSON here; change the append id; change the file name
-
-                $.getJSON("jsonDatabase/finalJson.json", function (data) {
+                $.getJSON("jsonDatabase/finaljson.json", function (data) {
 
                         console.dir(data);
                         var html = "";
@@ -38,7 +39,7 @@ $(document).ready(function () {
                                     // '<div class="commentsContainer">';
 
                                     '<div class="panel panel-default">' + //added
-                                    '<div class="panel-heading"> Ice Cream Reviews! </div>'; //added
+                                    '<div class="panel-heading">Ice Cream Reviews! </div>'; //added
                                 $.each(item.comments, function (ind, i) {
                                         html += '<div class="panel-body">' + //added
                                             '<div class ="buyerName">' + i.username + '</div>' +
@@ -59,7 +60,7 @@ $(document).ready(function () {
                                             '</div>' + //end stars
                                             '</div>'; //panel body
 
-                                    }) //each comment
+                                    }) //each comment 
 
                                 html += '</div>' + // comments container
                                     '</div>' + //panel
@@ -68,73 +69,41 @@ $(document).ready(function () {
                             }) //EACH
 
                         $("#pageContent").html(html);
+
                     }) //getJSON
+
             } else if (partial == "orderPage") { //ajax get order.html
                 $.get("partials/order2.html", function (data) {
+
                         $("#pageContent").html(data);
 
+                        $('#startRentDate, #endRentDate').datepicker({});
 
-                        //activating the start rent date and end rent data
-                        $("startRentDate, #endRentDate").datepicker({});
+                        $("#submitButton").on("click", function () {
 
-                        //put the takeAnOrder.js here (inside get)
-                        //change button text
-                        $("#myButton").on("mouseenter", function () {
-                                $("#log").append("<br>Button mouseenter");
-                                $(this).text("ORDER NOW!!!");
-                            })
-                            .on("mouseleave", function () {
-                                $("#log").append("<br>Button mouseleave");
-                                $(this).text("Click Me!");
-                            });
+                                //get all empty inputs and select
+                                //add error class to div container
+                                $("input, select").filter(function () {
+                                    return !this.value;
+                                }).closest("div").addClass("has-error");
 
+                                //remove error class for non empty ones
+                                $("input, select").filter(function () {
+                                    return this.value; //removed !
+                                }).closest("div").removeClass("has-error");
 
-                        //change the backgrund color on focus, blue
-                        $("#mySingleLineText").on("focus", function () {
-                                $("#log").append("<br>input focus");
-                                $(this).css("background-color", "#F7F8E0");
-                            })
-                            .on("blur", function () {
-                                $("#log").append("<br>input blur");
-                                $(this).css("background-color", "#FFF");
-                            });
+                                var errors = $(".has-error");
 
-                        //give the user a message about their selection
-                        $("#mySelect").on("change", function () {
+                                if (errors.length < 1) {
+                                    //alert("no errors");
+                                    sendConfirmation();
+                                }
 
-                            var val = $(this).val();
-                            $("#log").append("<br>select change");
-                            $("#mySelectMessage").html(val + " is a nice selection!");
-
-                        });
-
-                        //user clicks the button
-                        $("#myButton").on("click", function () {
-
-                            $("#log").append("<br>User clicked the button");
-
-                            var userOrder = {};
-
-                            userOrder.myInput = $("#mySingleLineText").val();
-                            userOrder.myTextarea = $("#myTextarea").val();
-                            userOrder.mySelect = $("#mySelect").val();
-                            userOrder.myRadio = $("[name='gender']:checked").val();
-                            userOrder.myCheckValues = [];
-
-                            $("[name='vehicle']:checked").each(function () {
-                                userOrder.myCheckValues.push($(this).val());
-                            });
-
-                            $("#log").append("<br>Value of input is: " + userOrder.myInput);
-                            $("#log").append("<br>Value of textarea is: " + userOrder.myTextarea);
-                            $("#log").append("<br>Value of select is: " + userOrder.mySelect);
-                            $("#log").append("<br>Value of radio button is: " + userOrder.myRadio);
-                            $("#log").append("<br>Value of checks is: " + userOrder.myCheckValues.join());
-                            $("#log").append("<br><br>Value of userOrder is: " + JSON.stringify(userOrder));
-                        })
+                            }) //click
                     }) //get
             }
             $("#pageContent").fadeIn();
+
         }
 
         function sendConfirmation() {
@@ -150,17 +119,51 @@ $(document).ready(function () {
 
             alert("Sending to database " + JSON.stringify(order));
             $("#successMsg").html("Order Received!<br/><br/>" +
-                order.catSelect + " will be delivered on " +
+                order.IceCreamSelect + " will be delivered on " +
                 order.startRentDate +
-                "<img id='chocolate' src='images/chocolate_icecream.jpg'>");
+                "<img id=''>");
 
         } //sendConfirmation
 
         //begin the program, get the homepage
         getPartial("homePage");
 
-
-
-
-        ;
     }) //ready
+    /*
+                //activate the datepicker
+                $('#startRentDate, #endRentDate').datepicker({});
+                //user clicks submit
+                $("#submitButton").on("click", function() {
+                  //add the error class to div of empty inputs
+                  $("input, select").filter(function() {
+                    return !this.value;
+                  }).closest("div").addClass("has-error")
+                  //remove the error class from all filled inputs
+                  $("input, select").filter(function() {
+                    return this.value;
+                  }).closest("div").removeClass("has-error");
+                  //get all errors
+                  var hasError = $(".has-error");
+                  //if no errors
+                  if (hasError.length < 1) {
+                    sendConfirmation();
+                  }
+                })
+                //do when order valid
+                function sendConfirmation() {
+                  //we will store all our order information here
+                  var order = {};
+                  //get all input values
+                  var inputs = $("input, select");
+                  //put all the input values into object ; this each can be done with jquery objects
+                  inputs.each(function() {
+                    var id = $(this).attr("id");
+                    order[id] = $(this).val();
+                  })
+                  //act as if sending to databse
+                  alert("send to databse: " + JSON.stringify(order));
+                  //show success message
+                  $("#successMsg").html("Order Received!<br/><br/>" +
+                    order.catSelect + " will be delivered on " + order.startRentDate + "<img id='paws' src='images/catPaws.jpeg'>");
+                }//end sendConfirmation
+    */

@@ -3,25 +3,25 @@
 
     <div class="col-xs-12 col-md-4">
         <label class="control-label">
-            Choose Flavour
+            Choose Ice Cream
         </label>
-        <select id="catSelect" class="form-control">
-            <option value="Chocolate">Chocolate</option>
-            <option value="Strawberry">Straberry</option>
-            <option value="Vanilla">Vanilla</option>
+        <select id="IceCreamSelect" class="form-control">
+            <option value="Paws">Chocolate</option>
+            <option value="Mittens">Strawberry</option>
+            <option value="Robert">Vanilla</option>
         </select>
     </div>
 
     <div class="col-xs-12 col-md-4">
         <label class="control-label">
-            Date of Order
+            Start Rent Date
         </label>
         <input type="text" id="startRentDate" name="name" class="form-control">
     </div>
 
     <div class="col-xs-12 col-md-4">
         <label class="control-label">
-            Date of Pick Up
+            End Rent Date
         </label>
         <input type="text" id="endRentDate" name="name" class="form-control">
     </div>
@@ -78,51 +78,35 @@
         <label class="control-label">
             Address
         </label>
-        <input id="address1" type="text" placeholder="100 Brookes Road - Unit 10" class="form-control">
+        <input id="address1" type="text" class="form-control">
     </div>
 
     <div class="col-xs-12 col-md-6">
         <label class="control-label">
             ZIP
         </label>
-        <input type="text" id="zip" placeholder="1W1 1W1" class="form-control">
+        <input type="text" id="zip" class="form-control">
     </div>
+
+    <div class="col-sm-6 col-xs-6 col-md-6">
+        <label class="control-label">
+            State/Province
+        </label>
+        <input type="text" id="state" class="form-control">
+    </div>
+
     <div class="col-sm-6 col-xs-6 col-md-6">
         <label class="control-label">
             Country
         </label>
-
-        <select id="country" name="country" placeholder="Choose Your Country" class="form-control">
-            <option value="01">Canada</option>
-            <option value="02">Unites States</option>
-            <option value="03">United Kingdom</option>
-        </select>
+        <input type="text" class="form-control" id="country">
     </div>
-    <div class="col-sm-6 col-xs-6 col-md-6">
-        <label class="control-label">
-          Province
-        </label>
-        <select id="province" name="province" placeholder="Choose Your Province" class="form-control">
-            <option value="01">Alberta</option>
-            <option value="02">British Columbia</option>
-            <option value="03">Manitoba</option>
-            <option value="04">New Brunswick</option>
-            <option value="05">Nova Scotia</option>
-            <option value="06">Ontario</option>
-            <option value="07">PEI</option>
-            <option value="08">Quebec</option>
-            <option value="09">Saskatchewan</option>
-
-        </select>
-    </div>
-
-
 
     <div class="col-md-12">
-        <button id="myButton" class="btn btn-success">
-          PURCHASE!!!
+        <button id="submitButton" class="btn btn-success">
+            Submit
         </button>
     </div>
     <div id='successMsg' class='col-md-12 text-success'></div>
 </div>
-<div class="col-xs-12"></div>
+<div class="col-xs-12 col-md-3"></div>
