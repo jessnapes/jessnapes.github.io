@@ -39,7 +39,7 @@ $(document).ready(function () {
                                     // '<div class="commentsContainer">';
 
                                     '<div class="panel panel-default">' + //added
-                                    '<div class="panel-heading">Ice Cream Reviews! </div>'; //added
+                                    '<div class="panel - heading">Click Here to Order This Flavour</div>'; //added
                                 $.each(item.comments, function (ind, i) {
                                         html += '<div class="panel-body">' + //added
                                             '<div class ="buyerName">' + i.username + '</div>' +
@@ -77,7 +77,7 @@ $(document).ready(function () {
 
                         $("#pageContent").html(data);
 
-                        $('#startRentDate, #endRentDate').datepicker({});
+                        $('#startOrderDate, #desiredDelieveryDate').datepicker({});
 
                         $("#submitButton").on("click", function () {
 
@@ -118,10 +118,9 @@ $(document).ready(function () {
             })
 
             alert("Sending to database " + JSON.stringify(order));
-            $("#successMsg").html("Order Received!<br/><br/>" +
-                order.IceCreamSelect + " will be delivered on " +
-                order.startRentDate +
-                "<img id=''>");
+            $("#successMsg").html("What A Yummy Order! Thank You!  <br/><br/>" +
+                order.IceCreamSelect + " Will be delivered from Ice Cream Mania on " +
+                order.startOrderDate + "<img src='images/icecream-scoop-order'>");
 
         } //sendConfirmation
 
