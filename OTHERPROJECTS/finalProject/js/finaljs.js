@@ -120,7 +120,7 @@ $(document).ready(function () {
             alert("Sending to database " + JSON.stringify(order));
             $("#successMsg").html("What A Yummy Order! Thank You!  <br/><br/>" +
                 order.IceCreamSelect + " Will be delivered from Ice Cream Mania on " +
-                order.startOrderDate + "<img src='images/icecream-scoop-order'>");
+                order.startOrderDate + "<img src='images/icecream-scoop-order.png'>");
 
         } //sendConfirmation
 
