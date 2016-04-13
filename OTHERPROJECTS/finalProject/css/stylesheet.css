@@ -5,7 +5,7 @@ body {
 .nav,
 .carousel,
 .jsonCat {
-    margin-top: 3%;
+    margin-top: 5%;
 }
 
 .nav-pills>li>a {
@@ -25,22 +25,12 @@ body {
 
 .carousel .item img {
     margin: 0 auto;
+    width: 100%;
     /* Align slide image horizontally center */
 }
 
 .bs-example {
     margin: 20px;
-}
-
-.catImage {
-    width: 100%;
-}
-
-.catName {
-    text-align: center;
-    font-weight: bold;
-    font-size: 24px;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #6DB733, 0 0 70px #6DB733, 0 0 80px #6DB733, 0 0 100px #6DB733, 0 0 150px #6DB733;
 }
 
 small {
